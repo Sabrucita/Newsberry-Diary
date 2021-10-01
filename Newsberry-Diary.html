@@ -1,134 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="CSS/Normalize.css">
-        <link rel="stylesheet" href="CSS/Style.css">
-        <title>Newsberry Diary</title>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <button type="button"><img src="photos/menu-hamburguesa.svg" alt=""></button>
-                <ul>
-                    <li>
-                        <a href="noticias.html">News</a>
-                    </li>
-                    <li>
-                        <a href="recetas.html">Recipes</a>
-                    </li>
-                    <li>
-                        <a href="podcasts.html">Podcasts</a>
-                    </li>
-                    <li>
-                        <a href="q&a.html">Q & A</a>
-                    </li>
-                    <li>
-                        <a href="jobs.html">Jobs</a>
-                    </li>
-                    <li>
-                        <a href="services.html">Services</a>
-                    </li>
-                    <li>
-                        <a href="subscribe.html">Subscribe</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-            <h1>
-                Newsberry
-            </h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
-        </header>
-        <section>
-            <div>
-                <ul>
-                    <li>
-                        News
-                    </li>
-                    <li>
-                        Recipes
-                    </li>
-                    <li>
-                        Podcasts
-                    </li>
-                    <li>
-                        Contact us
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <img src="Photos/1.jpg" alt="showcase">
-            </div>
-        </section>
-        <article>
-            <section>
-                <div></div>
-                <div></div>
-                <div></div>
-            </section>
-        </article>
-        <section>
-            <div>
-                <p>LIVE NEWS</p>
-            </div>
-            <div>
-                <video src="#">Video</video>
-            </div>
-        </section>
-        <footer>
-            <div>
-                <p>
-                    Newsberry Diary
-                </p>
-                <ul>
-                    <li>
-                        <a href="noticias.html">News</a>
-                    </li>
-                    <li>
-                        <a href="recetas.html">Recipes</a>
-                    </li>
-                    <li>
-                        <a href="podcasts.html">Podcasts</a>
-                    </li>
-                    <li>
-                        <a href="q&a.html">Q & A</a>
-                    </li>
-                    <li>
-                        <a href="jobs.html">Jobs</a>
-                    </li>
-                    <li>
-                        <a href="services.html">Services</a>
-                    </li>
-                    <li>
-                        <a href="subscribe.html">Subscribe</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <p>Social Media</p>
-                <ul>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Youtube</a></li>
-                    <li><a href="#">Correo Electrónico</a></li>
-                    <li><a href="#">Whatsapp</a></li>
-                </ul>
-            </div>
-            <div>
-                <p>
-                    Todos los derechos reservados.
-                </p>
-            </div>
-        </footer>
-    </body>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="CSS/Normalize.css">
+		<link rel="stylesheet" href="CSS/Style.css">
+		<title>Newsberry Diary</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<button class="hide-desktop" type="button"><img id="hamburger" src="photos/menu-hamburguesa.svg" alt=""></button>
+				<ul class="desktop">
+					<li>
+						<a href="noticias.html">News</a>
+					</li>
+					<li>
+						<a href="recetas.html">Recipes</a>
+					</li>
+					<li>
+						<a href="q&a.html">Q & A</a>
+					</li>
+					<li>
+						<a href="jobs.html">Jobs</a>
+					</li>
+					<li>
+						<a href="services.html">Services</a>
+					</li>
+					<li>
+						<a href="subscribe.html">Subscribe</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</nav>
+			<h1>
+				Newsberry
+			</h1>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit.
+			</p>
+			<button type="button"><img id="hamburger" src="photos/user-logo.png" alt="user-logo"></button>
+		</header>
+		<section>
+			<div>
+				<ul class="mobile">
+					<li>
+						News
+					</li>
+					<li>
+						Recipes
+					</li>
+					<li>
+						Contact us
+					</li>
+				</ul>
+			</div>
+			<div>
+				<img src="Photos/1.jpg" alt="showcase">
+			</div>
+		</section>
+		<div class="container">
+			<section>
+				<div>
+					<p>
+						Wheather
+					</p>
+					<img src="Photos/weather.jpg" alt="weather">
+				</div>
+				<div>
+					<p>
+						Publicity
+					</p>
+				</div>
+			</section>
+			<section>
+				<div class="articles">
+					<h2>
+						<a href="https://www.newfoodmagazine.com/article/156528/making-protein-out-of-thin-air/">
+							Making protein out of thin air
+						</a>
+					</h2>
+					<a href="https://www.newfoodmagazine.com/article/156528/making-protein-out-of-thin-air/">
+						<img src="photos/art-1.jpg" alt="making protein out of air">
+					</a>
+					<p>
+						Air Protein CEO, Lisa Dyson, explains how her company leveraged NASA technology to create a protein source
+						from the air that we breathe. We are going to have to feed a lot more people in thirty years’ time. In
+						fact, the United Nations predicts that the food industry will have to provide for almost 10 billion people
+						by 2050 – an increase of nearly 20 percent on the current population.
+					</p>
+				</div>
+				<div class="articles">
+					<h2>
+						<a href="https://www.bbcgoodfood.com/recipes/vegan-apple-cake">
+							Vegan apple cake
+						</a>
+					</h2>
+					<a href="https://www.bbcgoodfood.com/recipes/vegan-apple-cake">
+						<img src="Photos/art-2.jpeg" alt="vegan apple cake">
+					</a>
+					<p>
+						Make this apple and almond cake to fill your cake tin. It's an ideal treat for anyone following a dairy-free
+						or vegan diet, and is delicious for afternoon cup of tea.
+					</p>
+				</div>
+				<div class="articles">
+					<h2>
+						<a href="https://www.newfoodmagazine.com/article/155264/ingredient-upcycling/">
+							Ingredient upcycling
+						</a>
+					</h2>
+					<a href="https://www.newfoodmagazine.com/article/155264/ingredient-upcycling/">
+						<img src="Photos/art-3.jpg" alt="Ingredient upcycling">
+					</a>
+					<p>
+						Jaclyn Bowen explains how some food manufacturers are saving money and the environment through ingredient
+						upcycling.
+					</p>
+				</div>
+			</section>
+			<section>
+					<h3>Related Articles</h3>
+				<div>
+					<h4>
+						<a href="https://joybauer.com/food-articles/berries/">
+							Health Benefits of Berries
+						</a>
+					</h4>
+					<a href="https://joybauer.com/food-articles/berries/">
+						<img src="Photos/related-1.jpg" alt="Berries">
+						They may be little, but boysenberries, blackberries, raspberries, strawberries, blueberries, and cranberries
+						are big on antioxidants.
+					</a>
+				</div>
+				<div>
+					<h4>
+						<a href="https://joybauer.com/food-articles/whole-grains/">
+							Whole Grains: How Food Affects Health
+						</a>
+					</h4>
+					<a href="https://joybauer.com/food-articles/whole-grains/">
+						<img src="Photos/related-2.jpg" alt="Grains">
+						Go with whole grains whenever you have a choice — you’ll get more filling fiber, plus a bounty of necessary
+						nutrients!
+					</a>
+				</div>
+				<div>
+					<h4>
+						<a href="https://joybauer.com/food-articles/herbs-and-spices/">
+							Herbs and Spices: How Food Affects Health
+						</a>
+					</h4>
+					<a href="https://joybauer.com/food-articles/herbs-and-spices/">
+						<img src="Photos/related-3.jpeg" alt="Herbs">
+						Using herbs, spices, and other seasonings will help flavor your food without adding extra sodium, calories,
+						sugar, or fat.
+					</a>
+				</div>
+			</section>
+		</div>
+		<section>
+			<div>
+				<p>LIVE NEWS</p>
+			</div>
+			<div>
+				<video src="#">Video</video>
+			</div>
+		</section>
+		<footer>
+			<div>
+				<p>
+					Newsberry Diary
+				</p>
+				<ul>
+					<li>
+						<a href="noticias.html">News</a>
+					</li>
+					<li>
+						<a href="recetas.html">Recipes</a>
+					</li>
+					<li>
+						<a href="q&a.html">Q & A</a>
+					</li>
+					<li>
+						<a href="jobs.html">Jobs</a>
+					</li>
+					<li>
+						<a href="services.html">Services</a>
+					</li>
+					<li>
+						<a href="subscribe.html">Subscribe</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<p>Social Media</p>
+				<ul>
+					<li><a href="#">Instagram</a></li>
+					<li><a href="#">Facebook</a></li>
+					<li><a href="#">Youtube</a></li>
+					<li><a href="#">Correo Electrónico</a></li>
+					<li><a href="#">Whatsapp</a></li>
+				</ul>
+			</div>
+			<div>
+				<p>
+					Todos los derechos reservados.
+				</p>
+			</div>
+		</footer>
+	</body>
 </html>
