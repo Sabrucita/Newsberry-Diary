@@ -51,16 +51,36 @@ img{
 	height: 225px;
 	object-fit: cover;
 }
-
-@media (min-width: 790px) {
+.container{
+	display: flex;
+}
+@media (min-width: 768px) {
 	.desktop {
 	  display: block;
 	}
 	.hide-desktop{
 		display: none;
 	}
+	#extra{
+		flex-basis: 10%;
+	}
+	#news-section{
+		flex-basis: 50%;
+	}
+	#related{
+		flex-basis: 25%;
+	}
+	.column{
+		padding: 30px 10px 30px 10px;
+	}
+	.articles{
+		display: flex;
+		padding-bottom: 10px;
+	}
+	.articles h2{
+		font-size: 40px;
+	}
 }
-
 .tab{
 	display: flex;
 	color: #fff;
@@ -136,17 +156,17 @@ img{
 
 .hero-img{
 	background-image: url("/Photos/1.jpg");
-	width: 375px;
-	height: 225px;
+	max-height: 50%;
 	background-size: cover;
 }
 
 .hero-text{
 	color: #fff;
-	font-size: 60px;
 	font-weight: 400;
 	text-align: center;
 	padding-top: 17%;
+	font-size-adjust: inherit;
+	min-width: 225px;
 }
 
 .hero-text h4{
