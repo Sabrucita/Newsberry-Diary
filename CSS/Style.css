@@ -182,15 +182,25 @@ img{
 }
 
 .social{
-	color: #6f6b7a;
-	background-color: #fff;
+	color: #fff;
+	background-color: #6f6b7a;
 	flex-grow: 1;
+	padding: 10px;
+	font-size: 17px;
 }
+
+.social a{
+	color: #fff;
+}
+
 .links{
 	background-color: #6f6b7a;
 	flex-grow: 2;
 	color: #fff;
 	border: none;
+	font-size: 17px;
+	padding-left: 40px;
+	padding-top: 10px;
 }
 
 .links li a{
