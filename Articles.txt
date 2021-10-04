@@ -1,6 +1,0 @@
-Article 1
-Air Protein CEO, Lisa Dyson, explains how her company leveraged NASA technology to create a protein source from the air that we breathe.
-
-https://www.newfoodmagazine.com/article/156528/making-protein-out-of-thin-air/
-<img src="Photos/1.jpg" alt="showcase">
-

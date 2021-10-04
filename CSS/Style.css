@@ -218,7 +218,7 @@ img{
 }
 
 .hero-img{
-	background-image: url("/Photos/1.jpg");
+	background-image: url("../Photos/1.jpg");
 	max-height: 50%;
 	background-size: cover;
 }
