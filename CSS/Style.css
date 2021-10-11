@@ -76,13 +76,13 @@ img{
 	#extra{
 		display: none;
 	}
+	#related{
+		margin: auto;
+		flex-grow: 1;
+	}
 }
 
 @media (min-width: 768px) {
-	#related{
-		width: 100%;
-		margin: 15px;
-	}
 	.desktop {
 	  display: block;
 	}
@@ -132,6 +132,9 @@ img{
 	.hero-text{
 		padding: 50px;
 	}
+	#related{
+		flex-basis: 25%;
+	}
 }
 
 .tab{
@@ -179,16 +182,18 @@ img{
 }
 
 .footer-container p{
-	font-size: 20px;
-	text-align: center;
+	font-size: 17px;
+	text-align: left;
+	padding-bottom: 10px;
 }
 
 .social{
 	color: #fff;
 	background-color: #6f6b7a;
 	flex-grow: 1;
-	padding: 10px;
-	font-size: 17px;
+	margin: auto;
+	font-size: 15px;
+	text-align: left;
 }
 
 .social a{
@@ -200,9 +205,10 @@ img{
 	flex-grow: 2;
 	color: #fff;
 	border: none;
-	font-size: 17px;
+	font-size: 15px;
 	padding-left: 40px;
 	padding-top: 10px;
+	text-align: left;
 }
 
 .links li a{
