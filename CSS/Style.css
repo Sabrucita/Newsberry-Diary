@@ -79,6 +79,10 @@ img{
 }
 
 @media (min-width: 768px) {
+	#related{
+		width: 100%;
+		margin: 15px;
+	}
 	.desktop {
 	  display: block;
 	}
@@ -97,9 +101,6 @@ img{
 	}
 	#news-section{
 		flex-basis: 50%;
-	}
-	#related{
-		flex-basis: 25%;
 	}
 	.column{
 		padding: 30px 10px 30px 10px;
