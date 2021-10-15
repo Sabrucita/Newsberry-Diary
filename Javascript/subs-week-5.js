@@ -1,5 +1,4 @@
 //Full Name Validation
-//Blur
 
 let inputName = document.querySelector("#full-name");
 inputName.addEventListener("blur",fullNameValidation);
@@ -30,5 +29,19 @@ let inputEmail = document.querySelector("#email");
 inputEmail.addEventListener("blur",emailValidation);
 
 function emailValidation(e) {
-    
+    const subsForm = e.target.value;
+    const emailAt = subsForm.indexOf("@");
+    if(emailAt>0){
+        const textAfterAt = subsForm.substring(emailAt+1);
+        const dotAfterAt = textAfterAt.indexOf(".");
+        if(dotAfterAt>0){
+            document.getElementsByClassName("error-txt")[1].innerHTML = "";
+        }else{
+            document.getElementsByClassName("error-txt")[1].innerHTML = "Invalid email format";
+        }
+    }else{
+        document.getElementsByClassName("error-txt")[1].innerHTML = "Invalid email format";
+    }
 }
+
+inputEmail.addEventListener("focus",focusValidation);
