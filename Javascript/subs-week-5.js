@@ -94,7 +94,6 @@ function phoneNumberValidation() {
     valuePhoneNumber= inputPhoneNumber.value;
     const re= /^([0-9])*$/
     numberSearch= valuePhoneNumber.match(re);
-    console.log(numberSearch)
     if(numberSearch != null && numberSearch[0].length >= 7){
         document.getElementsByClassName("error-txt")[4].innerHTML = "";
     }else{
@@ -113,7 +112,6 @@ function addressValidation() {
     valueAddress= inputAddress.value;
     const re= /^(([a-zA-Z]+[\s0-9]+)|([0-9]+[\sa-zA-Z]+))[0-9\sa-zA-Z]*$/
     searchInput = valueAddress.match(re);
-    console.log(searchInput)
     if(searchInput != null && searchInput[0].length >= 5){
         if(searchInput[0].indexOf(" ")>0 && searchInput[0].indexOf(" ") < searchInput[0].length-1){
             document.getElementsByClassName("error-txt")[5].innerHTML = "";
@@ -136,7 +134,6 @@ function cityValidation() {
     valueCity = inputCity.value;
     const re = /^([a-zA-Z])*$/
     matchInput = valueCity.match(re);
-    console.log(matchInput)
     if (matchInput != null && matchInput[0].length >= 3){
         document.getElementsByClassName("error-txt")[6].innerHTML = "";
     }else{
@@ -154,7 +151,6 @@ function postalCodeValidation() {
     valuePostalCode = inputPostalCode.value;
     const re = /^([0-9a-zA-Z])*$/
     matchInput = valuePostalCode.match(re);
-    console.log(matchInput)
     if (matchInput != null && matchInput[0].length >= 3){
         document.getElementsByClassName("error-txt")[7].innerHTML = "";
     }else{
@@ -162,3 +158,21 @@ function postalCodeValidation() {
     }
 }
 inputPostalCode.addEventListener("focus",focusValidation);
+
+//DNI Validations
+
+let inputDni = document.querySelector("#dni");
+inputDni.addEventListener("blur",dniValidation);
+
+function dniValidation() {
+    valueDni = inputDni.value;
+    const re = /^([0-9])*$/
+    matchInput = valueDni.match(re);
+    console.log(matchInput)
+    if (matchInput != null && matchInput[0].length <= 8 && matchInput[0].length >= 7){
+        document.getElementsByClassName("error-txt")[8].innerHTML = "";
+    }else{
+        document.getElementsByClassName("error-txt")[8].innerHTML = "Invalid DNI";
+    }
+}
+inputDni.addEventListener("focus",focusValidation);
