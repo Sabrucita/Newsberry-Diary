@@ -4,6 +4,12 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/CSS/Normalize.css">
+	<link rel="stylesheet" href="/CSS/style-subscribe-page.css">
+	<link rel="stylesheet" href="/CSS/Style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swapp" rel="stylesheet">
 	<title>Newsberry Diary</title>
 </head>
 <body>
@@ -48,7 +54,7 @@
 			<div>
 				<ul class="tab">
 					<li class="tab-news">
-						News
+						Subscribe
 					</li>
 					<li class="tab-news other-tabs">
 						Recipes
@@ -59,59 +65,61 @@
 				</ul>
 			</div>
 			<div class="hero-text">
-				<p>Latest news</p>
+				<p>Subscribe to our newsletter</p>
 				<h4>Don't miss anything!</h4>
 			</div>
 		</div>
 	</section>
-	<form name="subs-form" id="subs-form">
-		<div>
-			<label for="full-name">Full name</label>
-			<input type="text" id="full-name" name="full-name">
-			<p class="error-txt"></p>
-		</div>
-		<div>
-			<label for="email">Email</label>
-			<input type="email" id="email" name="email">
-			<p class="error-txt"></p>
-		</div>
-		<div>
-			<label for="password">Password</label>
-			<input type="password" id="password" name="password">
-			<p class="error-txt"></p>
-		</div>
-		<div>
-			<label for="age">Age</label>
-			<input type="number" id="age" name="age">
-			<p class="error-txt"></p>
-		</div>
-		<div>
-			<label for="phone">Phone number</label>
-			<input type="tel" id="phone" name="phone">
-			<p class="error-txt"></p>
-		</div>
-		<div>
-			<label for="address">Address</label>
-			<input type="text" id="address" name="address">
-			<p class="error-txt"></p>
-		</div>
-		<div>
-			<label for="city">City</label>
-			<input type="text" id="city" name="city">
-			<p class="error-txt"></p>
-		</div>
-		<div>
-			<label for="postal-code">Postal code</label>
-			<input type="text" id="postal-code" name="postal-code">
-			<p class="error-txt"></p>
-		</div>
-		<div>
-			<label for="dni">DNI</label>
-			<input type="text" id="dni" name="dni">
-			<p class="error-txt"></p>
-		</div>
-		<input type="submit" value="Subscribe">
-	</form>
+	<div>
+		<form name="subs-form" id="subs-form">
+			<div>
+				<label for="full-name">Full name</label>
+				<input type="text" id="full-name" name="full-name" required>
+				<p class="error-txt"></p>
+			</div>
+			<div>
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required>
+				<p class="error-txt"></p>
+			</div>
+			<div>
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" required>
+				<p class="error-txt"></p>
+			</div>
+			<div>
+				<label for="age">Age</label>
+				<input type="number" id="age" name="age" required>
+				<p class="error-txt"></p>
+			</div>
+			<div>
+				<label for="phone">Phone number</label>
+				<input type="tel" id="phone" name="phone" required>
+				<p class="error-txt"></p>
+			</div>
+			<div>
+				<label for="address">Address</label>
+				<input type="text" id="address" name="address" required>
+				<p class="error-txt"></p>
+			</div>
+			<div>
+				<label for="city">City</label>
+				<input type="text" id="city" name="city" required>
+				<p class="error-txt"></p>
+			</div>
+			<div>
+				<label for="postal-code">Postal code</label>
+				<input type="text" id="postal-code" name="postal-code" required>
+				<p class="error-txt"></p>
+			</div>
+			<div>
+				<label for="dni">DNI</label>
+				<input type="text" id="dni" name="dni" required>
+				<p class="error-txt"></p>
+			</div>
+			<input type="submit" id="subs-button" value="Subscribe">
+		</form>
+	</div>
 	<footer>
 		<div class="footer-container">
 			<div class="links">
@@ -161,6 +169,3 @@
 	<script src="/Javascript/subs-week-5.js"></script>
 </body>
 </html>
-
-<!--borrar flechas en controles de numero para age
-	https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_hide_arrow_number-->

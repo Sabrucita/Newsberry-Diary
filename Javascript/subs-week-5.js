@@ -132,7 +132,7 @@ inputCity.addEventListener("blur",cityValidation);
 
 function cityValidation() {
     valueCity = inputCity.value;
-    const re = /^([a-zA-Z])*$/
+    const re = /^([a-zA-Z\s])*$/
     matchInput = valueCity.match(re);
     if (matchInput != null && matchInput[0].length >= 3){
         document.getElementsByClassName("error-txt")[6].innerHTML = "";
@@ -168,7 +168,6 @@ function dniValidation() {
     valueDni = inputDni.value;
     const re = /^([0-9])*$/
     matchInput = valueDni.match(re);
-    console.log(matchInput)
     if (matchInput != null && matchInput[0].length <= 8 && matchInput[0].length >= 7){
         document.getElementsByClassName("error-txt")[8].innerHTML = "";
     }else{
@@ -176,3 +175,34 @@ function dniValidation() {
     }
 }
 inputDni.addEventListener("focus",focusValidation);
+
+let formSubs = document.querySelector("#subs-form");
+
+function correctFormMessage(e) {
+    let result = "";
+    for (let i = 0; i < formSubs.length-1; i++) {
+        result += formSubs[i].value + "\n";
+    }
+    alert("THE DATA YOU WANT TO SEND IS THE FOLLOWING"+result);
+}
+
+formSubs.addEventListener("submit",errorFormMessage);
+
+function errorFormMessage(e) {
+    e.preventDefault();
+    const errorText = document.getElementsByClassName("error-txt");
+    console.log(errorText)
+    let errorResult = "";
+    for (let i = 0; i < errorText.length; i++) {
+        const element = errorText[i].textContent;
+        if(element != ""){
+            errorResult += element + "\n";
+        }
+    }
+
+    if(errorResult == ""){
+        correctFormMessage();
+    }else{
+        alert("THE ERRORS WERE THE FOLLOWING\n"+errorResult);
+    }
+}
