@@ -23,3 +23,12 @@ inputName.addEventListener("focus",focusValidation);
 function focusValidation(e) {
     e.target.parentNode.children[2].innerHTML = "";
 }
+
+//Email Validation
+
+let inputEmail = document.querySelector("#email");
+inputEmail.addEventListener("blur",emailValidation);
+
+function emailValidation(e) {
+    
+}
