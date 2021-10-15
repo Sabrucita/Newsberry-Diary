@@ -68,3 +68,18 @@ function passwordValidation(e) {
 }
 
 inputPassword.addEventListener("focus",focusValidation);
+
+//Age Validation
+
+let inputAge = document.querySelector("#age");
+inputAge.addEventListener("blur",ageValidation);
+
+function ageValidation(e) {
+    ageValue= parseFloat(inputAge.value);
+    if (Number.isInteger(ageValue)==true && ageValue>=18){
+        document.getElementsByClassName("error-txt")[3].innerHTML = "";
+    }else{
+        document.getElementsByClassName("error-txt")[3].innerHTML = "You must be over 18 years to subscribe or check to write an integer number as an age";
+    }
+}
+inputAge.addEventListener("focus",focusValidation);
