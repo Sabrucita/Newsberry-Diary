@@ -74,7 +74,7 @@ inputPassword.addEventListener("focus",focusValidation);
 let inputAge = document.querySelector("#age");
 inputAge.addEventListener("blur",ageValidation);
 
-function ageValidation(e) {
+function ageValidation() {
     ageValue= parseFloat(inputAge.value);
     if (Number.isInteger(ageValue)==true && ageValue>=18){
         document.getElementsByClassName("error-txt")[3].innerHTML = "";
@@ -103,3 +103,26 @@ function phoneNumberValidation() {
 }
 
 inputPhoneNumber.addEventListener("focus",focusValidation);
+
+//Address Validation
+
+let inputAddress = document.querySelector("#address");
+inputAddress.addEventListener("blur",addressValidation);
+
+function addressValidation() {
+    valueAddress= inputAddress.value;
+    const re= /^(([a-zA-Z]+[\s0-9]+)|([0-9]+[\sa-zA-Z]+))[0-9\sa-zA-Z]*$/
+    searchInput = valueAddress.match(re);
+    console.log(searchInput)
+    if(searchInput != null && searchInput[0].length >= 5){
+        if(searchInput[0].indexOf(" ")>0 && searchInput[0].indexOf(" ") < searchInput[0].length-1){
+            document.getElementsByClassName("error-txt")[5].innerHTML = "";
+        }else{
+            document.getElementsByClassName("error-txt")[5].innerHTML = "Invalid Address";
+        }
+    }else{
+        document.getElementsByClassName("error-txt")[5].innerHTML = "Invalid Address";
+    }
+}
+
+inputAddress.addEventListener("focus",focusValidation);
