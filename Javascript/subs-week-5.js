@@ -1,3 +1,4 @@
+//Utilicé en algunos casos expresiones regulares y en otros no para probar las distintas formas de resolver el ejercicio.
 //Full Name Validation
 
 let inputName = document.querySelector("#full-name");
@@ -45,3 +46,25 @@ function emailValidation(e) {
 }
 
 inputEmail.addEventListener("focus",focusValidation);
+
+//Password Validation
+
+let inputPassword = document.querySelector("#password");
+inputPassword.addEventListener("blur",passwordValidation);
+
+function passwordValidation(e) {
+    const textInputPassword = inputPassword.value;
+    if(textInputPassword.length >= 8){
+        const re= /^(([a-zA-Z]+[0-9]+)|([0-9]+[a-zA-Z]+))[0-9a-zA-Z]*$/
+        letterAndNumberSearch= textInputPassword.search(re);
+        if(letterAndNumberSearch == 0){
+            document.getElementsByClassName("error-txt")[2].innerHTML = "";
+        }else{
+            document.getElementsByClassName("error-txt")[2].innerHTML = "Invalid password, it must have letters and numbers";
+        }
+    }else{
+        document.getElementsByClassName("error-txt")[2].innerHTML = "Invalid password, it must have at least 8 characters";
+    }
+}
+
+inputPassword.addEventListener("focus",focusValidation);
