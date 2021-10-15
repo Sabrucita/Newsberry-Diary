@@ -83,3 +83,23 @@ function ageValidation(e) {
     }
 }
 inputAge.addEventListener("focus",focusValidation);
+
+// Phone number Validation
+
+let inputPhoneNumber = document.querySelector("#phone");
+inputPhoneNumber.addEventListener("blur",phoneNumberValidation);
+
+
+function phoneNumberValidation() {
+    valuePhoneNumber= inputPhoneNumber.value;
+    const re= /^([0-9])*$/
+    numberSearch= valuePhoneNumber.match(re);
+    console.log(numberSearch)
+    if(numberSearch != null && numberSearch[0].length >= 7){
+        document.getElementsByClassName("error-txt")[4].innerHTML = "";
+    }else{
+        document.getElementsByClassName("error-txt")[4].innerHTML = "Phone number ivalid, it must have 7 or more numbers or it must not have letters or signs";
+    }
+}
+
+inputPhoneNumber.addEventListener("focus",focusValidation);
