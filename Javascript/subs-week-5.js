@@ -144,3 +144,21 @@ function cityValidation() {
     }
 }
 inputCity.addEventListener("focus",focusValidation);
+
+//Postal Code Validation
+
+let inputPostalCode = document.querySelector("#postal-code");
+inputPostalCode.addEventListener("blur",postalCodeValidation);
+
+function postalCodeValidation() {
+    valuePostalCode = inputPostalCode.value;
+    const re = /^([0-9a-zA-Z])*$/
+    matchInput = valuePostalCode.match(re);
+    console.log(matchInput)
+    if (matchInput != null && matchInput[0].length >= 3){
+        document.getElementsByClassName("error-txt")[7].innerHTML = "";
+    }else{
+        document.getElementsByClassName("error-txt")[7].innerHTML = "Invalid Postal Code";
+    }
+}
+inputPostalCode.addEventListener("focus",focusValidation);
