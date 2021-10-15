@@ -126,3 +126,21 @@ function addressValidation() {
 }
 
 inputAddress.addEventListener("focus",focusValidation);
+
+//City Validation
+
+let inputCity = document.querySelector("#city");
+inputCity.addEventListener("blur",cityValidation);
+
+function cityValidation() {
+    valueCity = inputCity.value;
+    const re = /^([a-zA-Z])*$/
+    matchInput = valueCity.match(re);
+    console.log(matchInput)
+    if (matchInput != null && matchInput[0].length >= 3){
+        document.getElementsByClassName("error-txt")[6].innerHTML = "";
+    }else{
+        document.getElementsByClassName("error-txt")[6].innerHTML = "Invalid City";
+    }
+}
+inputCity.addEventListener("focus",focusValidation);
