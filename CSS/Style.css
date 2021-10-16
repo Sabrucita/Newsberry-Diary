@@ -116,6 +116,8 @@ input:focus{
 
 h2{
 	color: #504d58;
+	text-align: center;
+	margin-top: 10px;
 }
 
 @media (max-width: 1740px){

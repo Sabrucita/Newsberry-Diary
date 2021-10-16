@@ -206,3 +206,11 @@ function errorFormMessage(e) {
         alert("THE ERRORS WERE THE FOLLOWING\n"+errorResult);
     }
 }
+
+const formTitle = document.querySelector("#h2-text");
+inputName.addEventListener("keydown",realTimeText);
+formTitleContent = formTitle.textContent;
+
+function realTimeText() {
+    formTitle.innerHTML = formTitleContent + inputName.value;
+}
