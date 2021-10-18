@@ -128,6 +128,18 @@ h2{
 		margin: auto;
 		flex-grow: 1;
 	}
+	#news-section{
+		flex-grow: 1;
+	}
+	#news-section p{
+		font-size: 15px;
+		text-align: left;
+		padding-top: 10px;
+	}
+	#news-section h2{
+		font-size: 30px;
+		text-align: left;
+	}
 }
 
 @media (min-width: 768px) {
