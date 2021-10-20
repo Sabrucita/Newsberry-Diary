@@ -214,3 +214,7 @@ formTitleContent = formTitle.textContent;
 function realTimeText() {
     formTitle.innerHTML = formTitleContent + inputName.value;
 }
+
+//
+//
+//WEEKLY PROBLEM 06
