@@ -184,6 +184,7 @@ function correctFormMessage(e) {
         result += formSubs[i].value + "\n";
     }
     alert("THE DATA YOU WANT TO SEND IS THE FOLLOWING"+result);
+    console.log(makeFullUri());
 }
 
 formSubs.addEventListener("submit",errorFormMessage);
@@ -218,3 +219,33 @@ function realTimeText() {
 //
 //
 //WEEKLY PROBLEM 06
+
+const url = "http://curso-dev-2021.herokuapp.com/newsletter?";//#full-name=input.value
+
+function makeFullUri() {
+    let urlParams = "";
+    const fullNameValue = inputName.value;
+    const emailValue = inputEmail.value;
+    const passwordValue = inputPassword.value;
+    const ageValue = inputAge.value;
+    const phoneNumberValue = inputPhoneNumber.value;
+    const addressValue = inputAddress.value;
+    const cityValue = inputCity.value;
+    const postalCodeValue = inputPostalCode.value;
+    const dniValue = inputDni.value;
+
+    urlParams +=
+        "name="+fullNameValue+
+        "&email="+emailValue+
+        "&password="+passwordValue+
+        "&age="+ageValue+
+        "&phone number="+phoneNumberValue+
+        "&address="+addressValue+
+        "&city="+cityValue+
+        "&postal code="+postalCodeValue+
+        "&dni="+dniValue;
+
+    return encodeURI (url+urlParams);
+}
+
+//console.log(encodeURI("sabrina pereira"));
