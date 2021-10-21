@@ -339,3 +339,39 @@ h2{
 #related img{
 	width: 100%;
 }
+
+.modal-container{
+	display: flex;
+	flex-direction: column;
+	background-color: #b6b3be;
+	position: fixed;
+	width: 45%;
+	height: 70%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 20px;
+	border: 2px #fff solid;
+}
+.modal-button{
+	width: 40px;
+	height: 40px;
+	background-color: #797485;
+	color: #fff;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.modal-container p{
+	color: #fff;
+	text-align: center;
+	font-size: 40px;
+	margin-top: 20%;
+	text-transform: uppercase;
+}
+
+#correct-data{
+	font-size: 20px;
+	margin-top: 10%;
+}
