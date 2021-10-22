@@ -254,10 +254,30 @@ function sendForm(){
 			return response.json();
 		})
 		.then(function(data){
-			console.log(data)
-			return data;
+			createSuccessMessage(data);
 		})
 		.catch(function(err) {
-			console.log(err);
+			console.log("The error is:",err);
 		})
 }
+
+
+function createSuccessMessage(values) {
+	const stringData=
+	"<p>Name: "+values.name+"</p>"+
+	"<p>Email: "+values.email+"</p>";
+	modalMessage(stringData);
+}
+
+const modalCloseButton = document.querySelector(".modal-button")
+	modalCloseButton.addEventListener("click", function(){
+		document.querySelector(".modal-container").classList.add("invisible")
+	})
+
+function modalMessage(message) {
+	document.getElementById("modal-message").innerHTML= message
+	document.querySelector(".modal-container").classList.remove("invisible")
+}
+
+
+//localStorage.getItem()

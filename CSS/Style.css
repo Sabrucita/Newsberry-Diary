@@ -353,6 +353,11 @@ h2{
 	border-radius: 20px;
 	border: 2px #fff solid;
 }
+
+.invisible{
+	visibility: hidden;
+}
+
 .modal-button{
 	width: 40px;
 	height: 40px;
@@ -363,7 +368,7 @@ h2{
 	right: 20px;
 }
 
-.modal-container p{
+#modal-title{
 	color: #fff;
 	text-align: center;
 	font-size: 40px;
@@ -371,7 +376,9 @@ h2{
 	text-transform: uppercase;
 }
 
-#correct-data{
+#modal-message{
 	font-size: 20px;
 	margin-top: 10%;
+	color: #fff;
+	text-align: center;
 }
