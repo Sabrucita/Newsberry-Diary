@@ -343,15 +343,15 @@ h2{
 .modal-container{
 	display: flex;
 	flex-direction: column;
-	background-color: #b6b3be;
+	background-color: #6f6b7a;
 	position: fixed;
-	width: 45%;
-	height: 70%;
+	width: 50%;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	border-radius: 20px;
 	border: 2px #fff solid;
+	padding: 30px;
 }
 
 .invisible{
@@ -359,26 +359,27 @@ h2{
 }
 
 .modal-button{
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 	background-color: #797485;
 	color: #fff;
 	position: absolute;
-	top: 20px;
-	right: 20px;
+	top: 15px;
+	right: 15px;
 }
 
 #modal-title{
 	color: #fff;
 	text-align: center;
-	font-size: 40px;
-	margin-top: 20%;
+	font-size: 3vh;
+
 	text-transform: uppercase;
 }
 
 #modal-message{
-	font-size: 20px;
-	margin-top: 10%;
+	font-size: 2vh;
+	margin-top: 5%;
 	color: #fff;
 	text-align: center;
+	line-height: 1.5;
 }

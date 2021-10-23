@@ -69,6 +69,22 @@ function passwordValidation(e) {
 
 inputPassword.addEventListener("focus",focusValidation);
 
+//Confirm Password Validation
+
+let inputConfirmPassword = document.querySelector("#confirm_password");
+inputConfirmPassword.addEventListener("blur",confirmPasswordValidation);
+
+function confirmPasswordValidation(e) {
+	const textInputConfirmPassword = inputConfirmPassword.value;
+	if(textInputConfirmPassword === inputPassword.value){
+		document.getElementsByClassName("error-txt")[3].innerHTML = "";
+	}else{
+		document.getElementsByClassName("error-txt")[3].innerHTML = "Invalid password, it's not equal to the password";
+	}
+
+inputConfirmPassword.addEventListener("focus",focusValidation);
+}
+
 //Age Validation
 
 let inputAge = document.querySelector("#age");
@@ -77,9 +93,9 @@ inputAge.addEventListener("blur",ageValidation);
 function ageValidation() {
 	ageValue= parseFloat(inputAge.value);
 	if (Number.isInteger(ageValue)==true && ageValue>=18){
-		document.getElementsByClassName("error-txt")[3].innerHTML = "";
+		document.getElementsByClassName("error-txt")[4].innerHTML = "";
 	}else{
-		document.getElementsByClassName("error-txt")[3].innerHTML = "You must be over 18 years to subscribe or check to write an integer number as an age";
+		document.getElementsByClassName("error-txt")[4].innerHTML = "You must be over 18 years to subscribe or check to write an integer number as an age";
 	}
 }
 inputAge.addEventListener("focus",focusValidation);
@@ -95,9 +111,9 @@ function phoneNumberValidation() {
 	const re= /^([0-9])*$/
 	numberSearch= valuePhoneNumber.match(re);
 	if(numberSearch != null && numberSearch[0].length >= 7){
-		document.getElementsByClassName("error-txt")[4].innerHTML = "";
+		document.getElementsByClassName("error-txt")[5].innerHTML = "";
 	}else{
-		document.getElementsByClassName("error-txt")[4].innerHTML = "Phone number ivalid, it must have 7 or more numbers or it must not have letters or signs";
+		document.getElementsByClassName("error-txt")[5].innerHTML = "Phone number ivalid, it must have 7 or more numbers or it must not have letters or signs";
 	}
 }
 
@@ -114,12 +130,12 @@ function addressValidation() {
 	searchInput = valueAddress.match(re);
 	if(searchInput != null && searchInput[0].length >= 5){
 		if(searchInput[0].indexOf(" ")>0 && searchInput[0].indexOf(" ") < searchInput[0].length-1){
-			document.getElementsByClassName("error-txt")[5].innerHTML = "";
+			document.getElementsByClassName("error-txt")[6].innerHTML = "";
 		}else{
-			document.getElementsByClassName("error-txt")[5].innerHTML = "Invalid Address";
+			document.getElementsByClassName("error-txt")[6].innerHTML = "Invalid Address";
 		}
 	}else{
-		document.getElementsByClassName("error-txt")[5].innerHTML = "Invalid Address";
+		document.getElementsByClassName("error-txt")[6].innerHTML = "Invalid Address";
 	}
 }
 
@@ -135,9 +151,9 @@ function cityValidation() {
 	const re = /^([a-zA-Z\s])*$/
 	matchInput = valueCity.match(re);
 	if (matchInput != null && matchInput[0].length >= 3){
-		document.getElementsByClassName("error-txt")[6].innerHTML = "";
+		document.getElementsByClassName("error-txt")[7].innerHTML = "";
 	}else{
-		document.getElementsByClassName("error-txt")[6].innerHTML = "Invalid City";
+		document.getElementsByClassName("error-txt")[7].innerHTML = "Invalid City";
 	}
 }
 inputCity.addEventListener("focus",focusValidation);
@@ -152,9 +168,9 @@ function postalCodeValidation() {
 	const re = /^([0-9a-zA-Z])*$/
 	matchInput = valuePostalCode.match(re);
 	if (matchInput != null && matchInput[0].length >= 3){
-		document.getElementsByClassName("error-txt")[7].innerHTML = "";
+		document.getElementsByClassName("error-txt")[8].innerHTML = "";
 	}else{
-		document.getElementsByClassName("error-txt")[7].innerHTML = "Invalid Postal Code";
+		document.getElementsByClassName("error-txt")[8].innerHTML = "Invalid Postal Code";
 	}
 }
 inputPostalCode.addEventListener("focus",focusValidation);
@@ -169,9 +185,9 @@ function dniValidation() {
 	const re = /^([0-9])*$/
 	matchInput = valueDni.match(re);
 	if (matchInput != null && matchInput[0].length <= 8 && matchInput[0].length >= 7){
-		document.getElementsByClassName("error-txt")[8].innerHTML = "";
+		document.getElementsByClassName("error-txt")[9].innerHTML = "";
 	}else{
-		document.getElementsByClassName("error-txt")[8].innerHTML = "Invalid DNI";
+		document.getElementsByClassName("error-txt")[9].innerHTML = "Invalid DNI";
 	}
 }
 inputDni.addEventListener("focus",focusValidation);
@@ -204,12 +220,13 @@ function errorFormMessage(e) {
 	if(errorResult == ""){
 		correctFormMessage();
 	}else{
-		alert("THE ERRORS WERE THE FOLLOWING\n"+errorResult);
+		modalMessage(errorResult,"The errors were the following");
 	}
 }
 
 const formTitle = document.querySelector("#h2-text");
-inputName.addEventListener("keydown",realTimeText);
+inputName.addEventListener("keyup",realTimeText);
+
 formTitleContent = formTitle.textContent;
 
 function realTimeText() {
@@ -227,6 +244,7 @@ function makeFullUri() {
 	const fullNameValue = inputName.value;
 	const emailValue = inputEmail.value;
 	const passwordValue = inputPassword.value;
+	const confirmPasswordValue = inputConfirmPassword.value;
 	const ageValue = inputAge.value;
 	const phoneNumberValue = inputPhoneNumber.value;
 	const addressValue = inputAddress.value;
@@ -238,6 +256,7 @@ function makeFullUri() {
 		"name="+fullNameValue+
 		"&email="+emailValue+
 		"&password="+passwordValue+
+		"&confirm_password="+confirmPasswordValue+
 		"&age="+ageValue+
 		"&phone_number="+phoneNumberValue+
 		"&address="+addressValue+
@@ -269,6 +288,7 @@ function createSuccessMessage(values) {
 	"<p>Name: "+values.name+"</p>"+
 	"<p>Email: "+values.email+"</p>"+
 	"<p>Password: "+values.password+"</p>"+
+	"<p>Confirm Password: "+values.confirm_password+"</p>"+
 	"<p>Age: "+values.age+"</p>"+
 	"<p>Phone Number: "+values.phone_number+"</p>"+
 	"<p>Address: "+values.address+"</p>"+
@@ -296,6 +316,7 @@ window.addEventListener("load", function() {
 		inputName.value = userData.name;
 		inputEmail.value = userData.email;
 		inputPassword.value = userData.password;
+		inputConfirmPassword.value = userData.password;
 		inputAge.value = userData.age;
 		inputPhoneNumber.value = userData.phone_number;
 		inputAddress.value = userData.address;
@@ -303,4 +324,5 @@ window.addEventListener("load", function() {
 		inputPostalCode.value = userData.postal_code;
 		inputDni.value = userData.dni;
 	}
+	formTitle.innerHTML = formTitleContent + inputName.value;
 })
