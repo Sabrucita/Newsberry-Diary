@@ -323,6 +323,6 @@ window.addEventListener("load", function() {
 		inputCity.value = userData.city;
 		inputPostalCode.value = userData.postal_code;
 		inputDni.value = userData.dni;
+		realTimeText();
 	}
-	formTitle.innerHTML = formTitleContent + inputName.value;
 })
