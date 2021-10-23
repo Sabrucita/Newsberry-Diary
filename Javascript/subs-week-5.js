@@ -179,11 +179,11 @@ inputDni.addEventListener("focus",focusValidation);
 let formSubs = document.querySelector("#subs-form");
 
 function correctFormMessage(e) {
-	let result = "";
+	/*let result = "";
 	for (let i = 0; i < formSubs.length-1; i++) {
 		result += formSubs[i].value + "\n";
 	}
-	alert("THE DATA YOU WANT TO SEND IS THE FOLLOWING"+result);
+	alert("THE DATA YOU WANT TO SEND IS THE FOLLOWING"+result);*/
 	sendForm();
 }
 
@@ -289,3 +289,18 @@ function modalMessage(message,titlemessage) {
 	document.getElementById("modal-title").innerHTML= titlemessage
 	document.querySelector(".modal-container").classList.remove("invisible")
 }
+
+window.addEventListener("load", function() {
+	const userData = JSON.parse(localStorage.getItem("user_data"))
+	if(userData != null){
+		inputName.value = userData.name;
+		inputEmail.value = userData.email;
+		inputPassword.value = userData.password;
+		inputAge.value = userData.age;
+		inputPhoneNumber.value = userData.phone_number;
+		inputAddress.value = userData.address;
+		inputCity.value = userData.city;
+		inputPostalCode.value = userData.postal_code;
+		inputDni.value = userData.dni;
+	}
+})
