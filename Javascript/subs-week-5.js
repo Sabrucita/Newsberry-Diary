@@ -220,7 +220,7 @@ function realTimeText() {
 //
 //WEEKLY PROBLEM 06
 
-const url = "http://curso-dev-2021.herokuapp.com/newsletter?";
+const url = "https://curso-dev-2021.herokuapp.com/newsletter?";
 
 function makeFullUri() {
 	let urlParams = "";
