@@ -239,10 +239,10 @@ function makeFullUri() {
 		"&email="+emailValue+
 		"&password="+passwordValue+
 		"&age="+ageValue+
-		"&phone number="+phoneNumberValue+
+		"&phone_number="+phoneNumberValue+
 		"&address="+addressValue+
 		"&city="+cityValue+
-		"&postal code="+postalCodeValue+
+		"&postal_code="+postalCodeValue+
 		"&dni="+dniValue;
 
 	return encodeURI (url+urlParams);
@@ -255,9 +255,11 @@ function sendForm(){
 		})
 		.then(function(data){
 			createSuccessMessage(data);
+			localStorage.setItem("user_data",JSON.stringify(data))
 		})
 		.catch(function(err) {
-			console.log("The error is:",err);
+			//console.log("The error is:",err);
+			modalMessage(err, "The subscription failed.")
 		})
 }
 
@@ -265,8 +267,15 @@ function sendForm(){
 function createSuccessMessage(values) {
 	const stringData=
 	"<p>Name: "+values.name+"</p>"+
-	"<p>Email: "+values.email+"</p>";
-	modalMessage(stringData);
+	"<p>Email: "+values.email+"</p>"+
+	"<p>Password: "+values.password+"</p>"+
+	"<p>Age: "+values.age+"</p>"+
+	"<p>Phone Number: "+values.phone_number+"</p>"+
+	"<p>Address: "+values.address+"</p>"+
+	"<p>City: "+values.city+"</p>"+
+	"<p>Postal Code: "+values.postal_code+"</p>"+
+	"<p>Dni: "+values.dni+"</p>";
+	modalMessage(stringData, "You've been subscribed to our newsletter");
 }
 
 const modalCloseButton = document.querySelector(".modal-button")
@@ -274,10 +283,9 @@ const modalCloseButton = document.querySelector(".modal-button")
 		document.querySelector(".modal-container").classList.add("invisible")
 	})
 
-function modalMessage(message) {
+function modalMessage(message,titlemessage) {
+
 	document.getElementById("modal-message").innerHTML= message
+	document.getElementById("modal-title").innerHTML= titlemessage
 	document.querySelector(".modal-container").classList.remove("invisible")
 }
-
-
-//localStorage.getItem()
