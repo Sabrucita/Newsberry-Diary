@@ -1,4 +1,4 @@
-# Radium Rocket BaSD Course | Weekly Problem 3, 5, 6 | Newsberry-Diary
+# Radium Rocket BaSD Course | Weekly Problems 3, 5, 6 | Newsberry-Diary
 
 ## Description
 
